@@ -151,7 +151,7 @@ License information will be added in a future release.
 
 ## 👤 Author
 
-Created by **Eri**
+Created by **Ermir Kenga**
 
 ---
 
