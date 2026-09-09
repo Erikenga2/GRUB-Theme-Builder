@@ -1,34 +1,1596 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Download Imgrepacker Lite - a lightweight tool for firmware unpack/repack including bin2fex.">
-  <meta name="keywords" content="imgrepacker, bin2fex, unpack firmware, repack firmware, Android tools, Ermir Kenga">
-  <title>Download ImgRePacker Lite by Ermir Kenga</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="GRUB Theme Builder - Create, edit and export beautiful GRUB themes with a powerful visual editor.">
+
+    <meta name="keywords"
+          content="GRUB Theme Builder, GRUB Theme Editor, GRUB Theme Maker, Linux GRUB themes">
+
+    <meta name="author" content="Eri">
+
+    <meta name="theme-color" content="#080a0f">
+
+    <title>GRUB Theme Builder</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background: #080a0f;
+            color: #f5f7fb;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(8, 10, 15, 0.82);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav {
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .logo-box {
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: linear-gradient(
+                135deg,
+                #7c5cff,
+                #4f46e5
+            );
+
+            font-weight: 900;
+
+            box-shadow:
+                0 8px 30px rgba(124,92,255,0.35);
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+
+            color: #9ba3b2;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+
+            padding: 130px 0 120px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.07);
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 650px;
+            height: 650px;
+
+            top: -300px;
+            right: -150px;
+
+            background:
+                rgba(124,92,255,0.16);
+
+            filter: blur(120px);
+
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 7px 13px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(124,92,255,0.09);
+
+            border:
+                1px solid rgba(124,92,255,0.25);
+
+            color: #b3a7ff;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            margin-bottom: 25px;
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #9b8cff;
+
+            box-shadow:
+                0 0 12px #9b8cff;
+        }
+
+        h1 {
+            max-width: 850px;
+
+            font-size:
+                clamp(55px, 9vw, 100px);
+
+            line-height: 0.95;
+
+            letter-spacing: -0.065em;
+
+            font-weight: 850;
+        }
+
+        h1 span {
+            background:
+                linear-gradient(
+                    100deg,
+                    #ffffff,
+                    #9888ff
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            margin-top: 30px;
+
+            color: #9aa3b2;
+
+            font-size: 18px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 35px;
+        }
+
+        .button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 12px;
+
+            padding: 13px 20px;
+
+            border-radius: 11px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            background: white;
+            color: #090b10;
+        }
+
+        .button-secondary {
+            background:
+                rgba(255,255,255,0.03);
+
+            border:
+                1px solid rgba(255,255,255,0.1);
+
+            color: white;
+        }
+
+        .version {
+            margin-top: 27px;
+
+            color: #626c7c;
+
+            font-size: 12px;
+        }
+
+        .version strong {
+            color: #aab2c0;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-title {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: auto auto 55px;
+        }
+
+        .kicker {
+            color: #9c8cff;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 0.17em;
+        }
+
+        .section-title h2 {
+            margin-top: 12px;
+
+            font-size:
+                clamp(38px, 5vw, 60px);
+
+            line-height: 1.05;
+
+            letter-spacing: -0.05em;
+        }
+
+        .section-title h2 span {
+            color: #a293ff;
+        }
+
+        .section-title p {
+            margin-top: 18px;
+
+            color: #858f9f;
+
+            font-size: 15px;
+        }
+
+        /* =========================
+           SCREENSHOT
+        ========================= */
+
+        .screenshot {
+            min-height: 520px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            border-radius: 22px;
+
+            border:
+                1px solid rgba(255,255,255,0.09);
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(124,92,255,0.12),
+                    transparent 55%
+                ),
+                #0e1118;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 35px 100px rgba(0,0,0,0.35);
+        }
+
+        .window-bar {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            height: 43px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.07);
+
+            background:
+                rgba(255,255,255,0.025);
+        }
+
+        .window-dots {
+            position: absolute;
+
+            top: 14px;
+            left: 18px;
+
+            display: flex;
+            gap: 6px;
+        }
+
+        .window-dots i {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #596170;
+        }
+
+        .placeholder {
+            text-align: center;
+
+            color: #697386;
+        }
+
+        .placeholder-icon {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: auto auto 15px;
+
+            border:
+                1px dashed #515b6d;
+
+            border-radius: 15px;
+
+            font-size: 30px;
+        }
+
+        .placeholder small {
+            display: block;
+
+            margin-top: 6px;
+
+            color: #4f5969;
+        }
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            background: #0b0e14;
+        }
+
+        .feature-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+        .card {
+            padding: 27px;
+
+            min-height: 225px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 17px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.035),
+                    rgba(255,255,255,0.01)
+                );
+
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(155,140,255,0.35);
+        }
+
+        .icon {
+            width: 43px;
+            height: 43px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 28px;
+
+            border-radius: 11px;
+
+            background:
+                rgba(124,92,255,0.1);
+
+            border:
+                1px solid rgba(124,92,255,0.16);
+
+            color: #aaa0ff;
+
+            font-size: 19px;
+        }
+
+        .card h3 {
+            font-size: 17px;
+        }
+
+        .card p {
+            margin-top: 8px;
+
+            color: #7f8999;
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           DOWNLOAD
+        ========================= */
+
+        .download-panel {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 60px;
+
+            padding: 55px;
+
+            border-radius: 23px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            background:
+                radial-gradient(
+                    circle at left,
+                    rgba(124,92,255,0.14),
+                    transparent 45%
+                ),
+                #11151e;
+        }
+
+        .download-panel h2 {
+            margin-top: 10px;
+
+            font-size:
+                clamp(40px, 5vw, 60px);
+
+            line-height: 1;
+
+            letter-spacing: -0.05em;
+        }
+
+        .download-panel h2 span {
+            color: #a293ff;
+        }
+
+        .download-panel p {
+            margin-top: 20px;
+
+            color: #808a9a;
+        }
+
+        .download-buttons {
+            display: grid;
+
+            gap: 12px;
+
+            align-content: center;
+        }
+
+        .download {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 18px;
+
+            border-radius: 14px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            background:
+                rgba(255,255,255,0.025);
+
+            transition: 0.2s;
+        }
+
+        .download:hover {
+            border-color:
+                rgba(155,140,255,0.4);
+
+            transform: translateX(4px);
+        }
+
+        .download-icon {
+            width: 43px;
+            height: 43px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background:
+                rgba(124,92,255,0.11);
+
+            color: #aaa0ff;
+        }
+
+        .download strong,
+        .download small {
+            display: block;
+        }
+
+        .download small {
+            color: #707a8b;
+
+            font-size: 12px;
+        }
+
+        .arrow {
+            margin-left: auto;
+
+            color: #687284;
+        }
+
+        /* =========================
+           ROADMAP
+        ========================= */
+
+        .roadmap {
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+        .roadmap-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+
+            padding: 19px 0;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.07);
+        }
+
+        .status {
+            width: 31px;
+            height: 31px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            border:
+                1px solid rgba(255,255,255,0.1);
+
+            color: #707a8a;
+        }
+
+        .done .status {
+            color: #a99cff;
+
+            border-color:
+                rgba(124,92,255,0.35);
+
+            background:
+                rgba(124,92,255,0.08);
+        }
+
+        .roadmap-item strong {
+            display: block;
+
+            font-size: 14px;
+        }
+
+        .roadmap-item small {
+            color: #687283;
+
+            font-size: 12px;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            text-align: center;
+
+            padding-top: 40px;
+        }
+
+        .cta-box {
+            padding: 85px 30px;
+
+            border-radius: 24px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            background:
+                radial-gradient(
+                    circle at center bottom,
+                    rgba(124,92,255,0.2),
+                    transparent 55%
+                ),
+                #11151e;
+        }
+
+        .cta-box h2 {
+            font-size:
+                clamp(38px, 5vw, 60px);
+
+            letter-spacing: -0.05em;
+        }
+
+        .cta-box p {
+            margin: 12px 0 28px;
+
+            color: #7d8797;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 45px 0 25px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.07);
+
+            background: #07090d;
+        }
+
+        .footer-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .footer-description {
+            margin-top: 9px;
+
+            color: #626c7c;
+
+            font-size: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+
+            gap: 25px;
+
+            color: #727c8d;
+
+            font-size: 13px;
+        }
+
+        .copyright {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-top: 40px;
+
+            padding-top: 18px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.06);
+
+            color: #4d5665;
+
+            font-size: 11px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            nav {
+                display: none;
+            }
+
+            .feature-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .download-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 100px 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                width:
+                    calc(100% - 28px);
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                min-height: auto;
+            }
+
+            .download-panel {
+                padding: 30px 22px;
+            }
+
+            .screenshot {
+                min-height: 330px;
+            }
+
+            .footer-top,
+            .copyright {
+                flex-direction: column;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+            }
+
+            .hero-meta {
+                display: none;
+            }
+        }
+
+    </style>
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px;">
-  <div style="max-width: 700px; margin: auto; background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-    <h1 style="color: #2c3e50;">ImgRePacker Lite</h1>
-    <p><strong>ImgRePacker Lite</strong> is a lightweight Windows tool created by Ermir Kenga, designed to unpack and repack Android firmware images. It also includes the <strong>bin2fex</strong> utility for working with Allwinner-based devices.</p>
 
-    <h3>Features:</h3>
-    <ul>
-      <li>Unpack and repack Android `.img` firmware files</li>
-      <li>Includes <strong>bin2fex</strong> for converting Allwinner images</li>
-      <li>Simple and fast user interface</li>
-      <li>Lightweight installation (.exe format)</li>
-      <li>Compatible with Windows 7, 8, 10, and 11</li>
-    </ul>
+<body>
 
-    <a href="https://github.com/Erikenga2/imgRePackerLite/raw/refs/heads/main/ImgRePackerlite_setup.exe" 
-       style="display: inline-block; margin-top: 20px; background-color: #007bff; color: white; padding: 12px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;">
-       Download Now (.exe)
-    </a>
+<header>
 
-    <p style="margin-top: 30px; font-size: 0.9em; color: #555;">
-      For support or feedback, contact: <a href="mailto:ermirkenga4@gmail.com">ermirkenga4@gmail.com</a>
-    </p>
-  </div>
+    <div class="container nav">
+
+        <a href="#" class="logo">
+
+            <span class="logo-box">G</span>
+
+            <span>
+                GRUB Theme Builder
+            </span>
+
+        </a>
+
+        <nav>
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="#showcase">
+                Showcase
+            </a>
+
+            <a href="#download">
+                Download
+            </a>
+
+            <a href="#roadmap">
+                Roadmap
+            </a>
+
+            <a href="https://github.com/Erikenga2/GRUB-Theme-Builder"
+               target="_blank">
+                GitHub ↗
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <div class="badge">
+
+                <span class="badge-dot"></span>
+
+                GRUB Theme Editor
+
+            </div>
+
+            <h1>
+
+                Create GRUB themes
+
+                <span>
+                    your way.
+                </span>
+
+            </h1>
+
+            <p class="hero-description">
+
+                A powerful visual editor for creating,
+                customizing and exporting GRUB themes —
+                without editing theme files by hand.
+
+            </p>
+
+            <div class="buttons">
+
+                <a class="button button-primary"
+                   href="#download">
+
+                    Download
+
+                    ↓
+
+                </a>
+
+                <a class="button button-secondary"
+                   href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases"
+                   target="_blank">
+
+                    View releases
+
+                    ↗
+
+                </a>
+
+            </div>
+
+            <div class="version">
+
+                Latest release
+
+                <strong>
+                    v1.0.0
+                </strong>
+
+                &nbsp; • &nbsp;
+
+                Windows &amp; Linux
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SHOWCASE -->
+
+    <section id="showcase">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <div class="kicker">
+                    THE EDITOR
+                </div>
+
+                <h2>
+
+                    Design visually.
+
+                    <span>
+                        See it instantly.
+                    </span>
+
+                </h2>
+
+                <p>
+
+                    Create your theme directly on
+                    the visual canvas and adjust
+                    elements in real time.
+
+                </p>
+
+            </div>
+
+
+            <!--
+                LATER YOU CAN REPLACE THIS
+                PLACEHOLDER WITH YOUR SCREENSHOT.
+
+                Example:
+
+                <img src="screenshot.png"
+                     alt="GRUB Theme Builder">
+            -->
+
+            <div class="screenshot">
+
+                <div class="window-bar"></div>
+
+                <div class="window-dots">
+
+                    <i></i>
+                    <i></i>
+                    <i></i>
+
+                </div>
+
+                <div class="placeholder">
+
+                    <div class="placeholder-icon">
+                        +
+                    </div>
+
+                    <div>
+                        Your screenshot goes here
+                    </div>
+
+                    <small>
+                        Replace this area with an image
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="features"
+             id="features">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <div class="kicker">
+                    FEATURES
+                </div>
+
+                <h2>
+
+                    Everything you need to
+
+                    <span>
+                        build a GRUB theme.
+                    </span>
+
+                </h2>
+
+                <p>
+                    Powerful tools designed to make
+                    GRUB theme creation easier.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+
+                <article class="card">
+
+                    <div class="icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        Visual Editor
+                    </h3>
+
+                    <p>
+                        Design your theme directly
+                        on a visual canvas.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="icon">
+                        ⌘
+                    </div>
+
+                    <h3>
+                        Drag &amp; Drop
+                    </h3>
+
+                    <p>
+                        Move and resize elements
+                        exactly where you want them.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="icon">
+                        ◉
+                    </div>
+
+                    <h3>
+                        Boot Menu
+                    </h3>
+
+                    <p>
+                        Customize your GRUB boot menu,
+                        borders and transparency.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="icon">
+                        ▣
+                    </div>
+
+                    <h3>
+                        Progress Bars
+                    </h3>
+
+                    <p>
+                        Add standard and circular
+                        progress indicators.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="icon">
+                        ◆
+                    </div>
+
+                    <h3>
+                        Custom Styling
+                    </h3>
+
+                    <p>
+                        Customize colors, opacity,
+                        borders and rounded corners.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="icon">
+                        ⇄
+                    </div>
+
+                    <h3>
+                        Import &amp; Export
+                    </h3>
+
+                    <p>
+                        Import existing GRUB themes
+                        and export your creations.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="icon">
+                        #
+                    </div>
+
+                    <h3>
+                        Project Files
+                    </h3>
+
+                    <p>
+                        Save your projects using the
+                        .GthEri project format.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="icon">
+                        ⌕
+                    </div>
+
+                    <h3>
+                        Zoom &amp; Precision
+                    </h3>
+
+                    <p>
+                        Zoom the canvas for accurate
+                        positioning and editing.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DOWNLOAD -->
+
+    <section id="download">
+
+        <div class="container">
+
+            <div class="download-panel">
+
+                <div>
+
+                    <div class="kicker">
+                        GET THE APP
+                    </div>
+
+                    <h2>
+
+                        Ready to build
+
+                        <span>
+                            your theme?
+                        </span>
+
+                    </h2>
+
+                    <p>
+
+                        Download the latest version
+                        from the official GitHub release.
+
+                    </p>
+
+                </div>
+
+
+                <div class="download-buttons">
+
+
+                    <a class="download"
+                       href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases/latest"
+                       target="_blank">
+
+                        <div class="download-icon">
+                            ⊞
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Windows
+                            </strong>
+
+                            <small>
+                                Download .exe
+                            </small>
+
+                        </div>
+
+                        <span class="arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+
+                    <a class="download"
+                       href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases/latest"
+                       target="_blank">
+
+                        <div class="download-icon">
+                            ◫
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Linux
+                            </strong>
+
+                            <small>
+                                Download Linux package
+                            </small>
+
+                        </div>
+
+                        <span class="arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ROADMAP -->
+
+    <section id="roadmap">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <div class="kicker">
+                    ROADMAP
+                </div>
+
+                <h2>
+
+                    Built now.
+
+                    <span>
+                        More to come.
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            <div class="roadmap">
+
+
+                <div class="roadmap-item done">
+
+                    <div class="status">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Visual theme editor
+                        </strong>
+
+                        <small>
+                            Completed
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="roadmap-item done">
+
+                    <div class="status">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            GRUB import &amp; export
+                        </strong>
+
+                        <small>
+                            Completed
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="roadmap-item done">
+
+                    <div class="status">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Project save &amp; load
+                        </strong>
+
+                        <small>
+                            Completed
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="roadmap-item">
+
+                    <div class="status">
+                        ○
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            More theme components
+                        </strong>
+
+                        <small>
+                            Planned
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="roadmap-item">
+
+                    <div class="status">
+                        ○
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            More customization options
+                        </strong>
+
+                        <small>
+                            Planned
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <div class="logo-box"
+                     style="margin:auto auto 20px;">
+                    G
+                </div>
+
+                <h2>
+                    Build something awesome.
+                </h2>
+
+                <p>
+                    Make your GRUB boot screen
+                    look exactly the way you want.
+                </p>
+
+                <a class="button button-primary"
+                   href="#download">
+
+                    Get GRUB Theme Builder
+
+                    →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-top">
+
+            <div>
+
+                <a href="#"
+                   class="logo">
+
+                    <span class="logo-box">
+                        G
+                    </span>
+
+                    <span>
+                        GRUB Theme Builder
+                    </span>
+
+                </a>
+
+                <p class="footer-description">
+                    Visual GRUB theme design made simple.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#features">
+                    Features
+                </a>
+
+                <a href="#download">
+                    Download
+                </a>
+
+                <a href="https://github.com/Erikenga2/GRUB-Theme-Builder"
+                   target="_blank">
+
+                    GitHub
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <span>
+                © 2026 Eri. All rights reserved.
+            </span>
+
+            <span>
+                GRUB Theme Builder
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
 </body>
 </html>
