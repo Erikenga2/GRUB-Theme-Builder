@@ -32,7 +32,8 @@ Instead of manually calculating positions in a GRUB theme configuration file, yo
 ## 🚀 Getting Started
 
 ### Download
-
+Download for Windows and Linux (Last version)
+We are working to ensure the application runs well on older versions of Linux as well.
 Go to the **Releases** section of this repository to download the latest version.
 
 You can find the latest release here:
