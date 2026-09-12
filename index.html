@@ -1,33 +1,77 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description"
-      content="GRUB Theme Builder is a visual editor for creating, customizing and exporting GRUB bootloader themes.">
 
-<meta name="keywords"
-      content="GRUB Theme Builder, GRUB themes, GRUB theme editor, GRUB bootloader, Linux GRUB">
+    <title>GRUB Theme Builder — Visual GRUB 2 Theme Editor</title>
 
-<meta name="author" content="Erikenga2">
+    <meta name="description"
+          content="GRUB Theme Builder is a free visual GRUB 2 theme editor and builder for Windows and Linux. Create, edit, import, preview and export GRUB bootloader themes.">
 
-<link rel="canonical"
-      href="https://erikenga2.github.io/GRUB-Theme-Builder/">
-<meta name="google-site-verification" content="LdbQviNnCrEQ4XnLkAdDeJceDqAZtx0SUHzSoPLk7e8" />
-<meta property="og:title" content="GRUB Theme Builder">
-<meta property="og:description"
-      content="Create beautiful GRUB themes with a powerful visual editor.">
-<meta property="og:type" content="website">
-<meta property="og:url"
-      content="https://erikenga2.github.io/GRUB-Theme-Builder/">
-<meta property="og:image"
-      content="https://erikenga2.github.io/GRUB-Theme-Builder/Capture.PNG">
-    <title>GRUB Theme Builder</title>
-    <meta name="description" content="Create beautiful GRUB themes with an easy visual editor.">
-    <meta name="author" content="Erikenga2">
+    <meta name="author" content="Ermir Kenga">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical"
+          href="https://erikenga2.github.io/GRUB-Theme-Builder/">
+
+    <meta name="google-site-verification"
+          content="LdbQviNnCrEQ4XnLkAdDeJceDqAZtx0SUHzSoPLk7e8">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title"
+          content="GRUB Theme Builder — Visual GRUB 2 Theme Editor">
+    <meta property="og:description"
+          content="Create, edit, import, preview and export GRUB 2 bootloader themes visually on Windows and Linux.">
+    <meta property="og:url"
+          content="https://erikenga2.github.io/GRUB-Theme-Builder/">
+    <meta property="og:image"
+          content="https://erikenga2.github.io/GRUB-Theme-Builder/Capture.PNG">
+    <meta property="og:site_name" content="GRUB Theme Builder">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title"
+          content="GRUB Theme Builder — Visual GRUB 2 Theme Editor">
+    <meta name="twitter:description"
+          content="A free visual GRUB 2 theme editor and builder for Windows and Linux.">
+    <meta name="twitter:image"
+          content="https://erikenga2.github.io/GRUB-Theme-Builder/Capture.PNG">
+
+    <!-- Software structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "GRUB Theme Builder",
+        "alternateName": [
+            "GRUB Theme Builder",
+            "GRUB Theme Editor"
+        ],
+        "description": "A free visual GRUB 2 theme editor and builder for Windows and Linux. Create, edit, import, preview and export GRUB bootloader themes.",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "GRUB Theme Editor",
+        "operatingSystem": [
+            "Windows",
+            "Linux"
+        ],
+        "softwareVersion": "1.0.0",
+        "url": "https://erikenga2.github.io/GRUB-Theme-Builder/",
+        "downloadUrl": "https://github.com/Erikenga2/GRUB-Theme-Builder/releases",
+        "author": {
+            "@type": "Person",
+            "name": "Ermir Kenga",
+            "url": "https://github.com/Erikenga2"
+        },
+        "codeRepository": "https://github.com/Erikenga2/GRUB-Theme-Builder"
+    }
+    </script>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -36,13 +80,27 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b0d10;
-            color: #f5f5f5;
-            line-height: 1.6;
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background: #080a0d;
+            color: #f5f7fa;
+            line-height: 1.7;
+        }
+
+        body::selection {
+            background: #4da3ff;
+            color: #06101a;
         }
 
         a {
@@ -50,8 +108,12 @@
             text-decoration: none;
         }
 
+        img {
+            max-width: 100%;
+        }
+
         .container {
-            width: min(1150px, 92%);
+            width: min(1180px, 92%);
             margin: auto;
         }
 
@@ -60,22 +122,29 @@
         header {
             position: sticky;
             top: 0;
-            z-index: 100;
-            background: rgba(11, 13, 16, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid #20242a;
+            z-index: 1000;
+
+            background: rgba(8, 10, 13, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.07);
         }
 
         .nav {
-            height: 70px;
+            min-height: 72px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 25px;
         }
 
         .logo {
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 19px;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+            white-space: nowrap;
         }
 
         .logo span {
@@ -84,338 +153,717 @@
 
         nav {
             display: flex;
-            gap: 25px;
+            align-items: center;
+            gap: 28px;
         }
 
         nav a {
-            color: #aaa;
+            color: #aab2bd;
             font-size: 14px;
-            transition: 0.2s;
+            font-weight: 500;
+            transition: 0.2s ease;
         }
 
         nav a:hover {
-            color: white;
+            color: #ffffff;
+        }
+
+        .nav-github {
+            padding: 8px 14px;
+            border: 1px solid #303741;
+            border-radius: 8px;
+        }
+
+        .nav-github:hover {
+            background: #151a20;
+            border-color: #4b5663;
         }
 
         /* HERO */
 
         .hero {
-            padding: 110px 0 80px;
+            position: relative;
+            overflow: hidden;
+
+            padding: 125px 0 105px;
+
             text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(77,163,255,0.13),
+                    transparent 45%
+                );
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+            left: 50%;
+            bottom: -180px;
+
+            width: 500px;
+            height: 300px;
+
+            transform: translateX(-50%);
+
+            background: rgba(77,163,255,0.08);
+            filter: blur(100px);
+            pointer-events: none;
         }
 
         .badge {
-            display: inline-block;
-            padding: 7px 14px;
-            border: 1px solid #303640;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 7px 15px;
+
+            border: 1px solid #303943;
             border-radius: 50px;
-            color: #9fb8d0;
+
+            background: rgba(255,255,255,0.025);
+
+            color: #aebdd0;
             font-size: 13px;
-            margin-bottom: 25px;
+            font-weight: 600;
+
+            margin-bottom: 28px;
+        }
+
+        .badge::before {
+            content: "";
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+            background: #4da3ff;
+
+            box-shadow: 0 0 12px rgba(77,163,255,0.7);
         }
 
         .hero h1 {
-            font-size: clamp(42px, 7vw, 78px);
-            line-height: 1.05;
-            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+
+            max-width: 950px;
+            margin: auto;
+
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: 1.02;
+
+            letter-spacing: -3px;
         }
 
         .hero h1 span {
             color: #4da3ff;
         }
 
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-            color: #aeb4bc;
-            font-size: 18px;
+        .hero-subtitle {
+            max-width: 760px;
+
+            margin: 30px auto 0;
+
+            color: #a9b1bc;
+
+            font-size: clamp(17px, 2vw, 20px);
+            line-height: 1.7;
+        }
+
+        .hero-highlight {
+            color: #f1f5f9;
+            font-weight: 600;
         }
 
         .buttons {
-            margin-top: 35px;
+            margin-top: 38px;
+
             display: flex;
             justify-content: center;
-            gap: 15px;
+            align-items: center;
+            gap: 14px;
+
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 13px 23px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: 0.2s;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 48px;
+
+            padding: 0 22px;
+
+            border-radius: 9px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
         }
 
         .btn-primary {
             background: #4da3ff;
-            color: #07101b;
+            color: #06101a;
+
+            box-shadow:
+                0 8px 30px rgba(77,163,255,0.18);
         }
 
         .btn-primary:hover {
-            background: #70b5ff;
-            transform: translateY(-2px);
+            background: #6db5ff;
         }
 
         .btn-secondary {
-            border: 1px solid #333a44;
-            color: white;
+            border: 1px solid #343c47;
+            color: #f1f5f9;
+            background: rgba(255,255,255,0.02);
         }
 
         .btn-secondary:hover {
-            background: #171b20;
+            background: #151a20;
+            border-color: #4a5563;
+        }
+
+        /* INTRO */
+
+        .intro {
+            padding: 80px 0;
+        }
+
+        .intro-box {
+            max-width: 900px;
+            margin: auto;
+
+            padding: 42px;
+
+            border: 1px solid #252c35;
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #11161c,
+                    #0d1116
+                );
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.25);
+        }
+
+        .intro-box h2 {
+            margin-bottom: 18px;
+
+            font-size: 31px;
+            letter-spacing: -0.7px;
+        }
+
+        .intro-box p {
+            color: #9da6b1;
+            font-size: 16px;
+        }
+
+        .intro-box p + p {
+            margin-top: 15px;
         }
 
         /* SCREENSHOTS */
 
         .screenshots {
-            padding: 30px 0 100px;
+            padding: 60px 0 100px;
         }
 
         .image-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 25px;
+            gap: 24px;
         }
 
         .image-box {
-            background: #11151a;
-            border: 1px solid #292f37;
-            border-radius: 14px;
-            padding: 10px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+
+            background: #10151b;
+
+            border: 1px solid #272f38;
+            border-radius: 16px;
+
+            padding: 10px;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.25);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .image-box:hover {
+            transform: translateY(-4px);
+            border-color: #3b4653;
         }
 
         .image-box img {
             width: 100%;
-            height: auto;
             display: block;
-            border-radius: 8px;
+
+            border-radius: 10px;
         }
 
         .image-caption {
-            padding: 15px 10px 8px;
-            color: #9da5af;
-            font-size: 14px;
+            padding: 15px 10px 9px;
+
+            color: #8f99a5;
+
+            font-size: 13px;
             text-align: center;
         }
 
         /* SECTION */
 
         section {
-            padding: 90px 0;
+            padding: 95px 0;
         }
 
         .section-title {
+            max-width: 700px;
+
+            margin: 0 auto 50px;
+
             text-align: center;
-            margin-bottom: 50px;
         }
 
         .section-title h2 {
-            font-size: 38px;
-            margin-bottom: 12px;
+            font-size: clamp(30px, 4vw, 40px);
+            line-height: 1.2;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 13px;
         }
 
         .section-title p {
-            color: #9299a3;
+            color: #8e98a4;
         }
 
         /* FEATURES */
 
         .features {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 17px;
         }
 
         .feature {
-            background: #11151a;
-            border: 1px solid #242a32;
-            padding: 25px;
-            border-radius: 12px;
-            transition: 0.2s;
+            min-height: 190px;
+
+            padding: 27px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #11161c,
+                    #0e1217
+                );
+
+            border: 1px solid #242b34;
+            border-radius: 14px;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease;
         }
 
         .feature:hover {
             transform: translateY(-4px);
-            border-color: #3c4653;
+            border-color: #3c4855;
         }
 
         .feature-icon {
-            font-size: 28px;
-            margin-bottom: 15px;
+            display: inline-flex;
+
+            width: 43px;
+            height: 43px;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 17px;
+
+            border-radius: 10px;
+
+            background: rgba(77,163,255,0.08);
+
+            border: 1px solid rgba(77,163,255,0.13);
+
+            font-size: 21px;
         }
 
         .feature h3 {
             margin-bottom: 8px;
+
+            font-size: 17px;
         }
 
         .feature p {
-            color: #969da7;
+            color: #929ca8;
             font-size: 14px;
         }
 
         /* DOWNLOAD */
 
         .download {
-            background: #0f1318;
+            background:
+                linear-gradient(
+                    180deg,
+                    #0d1116,
+                    #10151b
+                );
+
+            border-top: 1px solid #1d232b;
+            border-bottom: 1px solid #1d232b;
         }
 
         .download-grid {
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 20px;
         }
 
         .download-card {
-            background: #151a20;
-            border: 1px solid #292f38;
-            border-radius: 14px;
-            padding: 30px;
+            padding: 34px;
+
+            background: #141a20;
+
+            border: 1px solid #2a323c;
+            border-radius: 16px;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-3px);
+            border-color: #3e4a58;
         }
 
         .download-card h3 {
-            font-size: 23px;
+            font-size: 24px;
             margin-bottom: 8px;
         }
 
+        .platform {
+            display: inline-block;
+
+            margin-bottom: 14px;
+
+            color: #4da3ff;
+
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
         .download-card p {
-            color: #969da7;
-            margin-bottom: 22px;
+            color: #959eaa;
+            margin-bottom: 25px;
+            font-size: 14px;
         }
 
         /* RELEASE */
 
         .release-box {
-            max-width: 750px;
+            max-width: 760px;
+
             margin: auto;
-            background: #11151a;
-            border: 1px solid #292f37;
-            border-radius: 14px;
-            padding: 30px;
+
+            padding: 38px;
+
             text-align: center;
+
+            background: #11161c;
+
+            border: 1px solid #29313b;
+            border-radius: 16px;
         }
 
         .version {
-            font-size: 32px;
+            font-size: 34px;
+            font-weight: 800;
+
+            margin-bottom: 7px;
+        }
+
+        .release-label {
+            color: #4da3ff;
+
+            font-size: 12px;
             font-weight: 700;
-            margin-bottom: 10px;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .release-box p {
-            color: #999fa8;
+            margin-top: 15px;
+            color: #949da8;
         }
 
         /* ROADMAP */
 
         .roadmap {
-            max-width: 700px;
+            max-width: 760px;
             margin: auto;
         }
 
         .roadmap-item {
             display: flex;
-            gap: 20px;
+            align-items: flex-start;
+
+            gap: 22px;
+
             padding: 20px 0;
-            border-bottom: 1px solid #252a31;
+
+            border-bottom: 1px solid #222932;
         }
 
         .roadmap-status {
-            min-width: 100px;
+            min-width: 105px;
+
             color: #4da3ff;
-            font-weight: 600;
+
+            font-size: 13px;
+            font-weight: 700;
         }
 
         .roadmap-item p {
-            color: #9ba2ab;
+            color: #969fa9;
+            font-size: 14px;
+        }
+
+        /* LINKS */
+
+        .links {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .link-card {
+            padding: 24px;
+
+            border: 1px solid #272f38;
+            border-radius: 13px;
+
+            background: #10151a;
+
+            transition: 0.2s ease;
+        }
+
+        .link-card:hover {
+            transform: translateY(-3px);
+            border-color: #43505e;
+        }
+
+        .link-card strong {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .link-card span {
+            color: #858f9b;
+            font-size: 13px;
         }
 
         /* CTA */
 
         .cta {
             text-align: center;
-            background: #10151b;
+
+            background:
+                radial-gradient(
+                    circle at 50% 30%,
+                    rgba(77,163,255,0.10),
+                    transparent 55%
+                );
         }
 
         .cta h2 {
-            font-size: 40px;
-            margin-bottom: 15px;
+            font-size: clamp(32px, 5vw, 46px);
+            letter-spacing: -1px;
+
+            margin-bottom: 13px;
         }
 
         .cta p {
-            color: #999fa8;
-            margin-bottom: 25px;
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #929ca7;
         }
 
         /* FOOTER */
 
         footer {
-            border-top: 1px solid #20242a;
-            padding: 30px 0;
-            color: #737a84;
+            border-top: 1px solid #20262e;
+
+            padding: 32px 0;
+
+            color: #737d88;
+
             font-size: 13px;
         }
 
         .footer-content {
             display: flex;
+
             justify-content: space-between;
+
             gap: 20px;
+
             flex-wrap: wrap;
+        }
+
+        .footer-content a {
+            color: #aeb7c2;
+        }
+
+        .footer-content a:hover {
+            color: #ffffff;
         }
 
         /* RESPONSIVE */
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
+
             .features {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
-            .image-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
-        @media (max-width: 650px) {
+        @media (max-width: 750px) {
+
             nav {
                 display: none;
             }
 
             .hero {
-                padding-top: 80px;
+                padding: 90px 0 75px;
             }
 
-            .features,
-            .download-grid {
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .image-grid,
+            .download-grid,
+            .links {
                 grid-template-columns: 1fr;
+            }
+
+            .intro-box {
+                padding: 28px;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 75px 0;
             }
 
             .hero h1 {
                 font-size: 45px;
             }
 
-            .section-title h2 {
-                font-size: 32px;
+            .hero-subtitle {
+                font-size: 16px;
             }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .roadmap-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+
         }
+
     </style>
 </head>
 
 <body>
 
 <header>
+
     <div class="container nav">
-        <div class="logo">
+
+        <a class="logo"
+           href="#">
             GRUB <span>Theme Builder</span>
-        </div>
+        </a>
 
         <nav>
+
+            <a href="#about">About</a>
+
             <a href="#features">Features</a>
+
             <a href="#screenshots">Screenshots</a>
+
             <a href="#download">Download</a>
-         
+
+            <a class="nav-github"
+               href="https://github.com/Erikenga2/GRUB-Theme-Builder"
+               target="_blank"
+               rel="noopener">
+                GitHub
+            </a>
+
         </nav>
+
     </div>
+
 </header>
 
 
@@ -424,6 +872,7 @@
     <!-- HERO -->
 
     <section class="hero">
+
         <div class="container">
 
             <div class="badge">
@@ -431,205 +880,638 @@
             </div>
 
             <h1>
-                Create GRUB themes<br>
-                <span>your way.</span>
+                Visual <span>GRUB 2</span><br>
+                Theme Editor
             </h1>
 
-            <p>
-                A powerful visual editor for creating, customizing and exporting
-                beautiful GRUB bootloader themes without manually editing theme files.
+            <p class="hero-subtitle">
+
+                <span class="hero-highlight">
+                    GRUB Theme Builder
+                </span>
+                is a free visual editor and builder for creating,
+                customizing, importing, previewing and exporting
+                GRUB 2 bootloader themes on Windows and Linux.
+
             </p>
 
             <div class="buttons">
+
                 <a class="btn btn-primary"
-                   href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases/latest">
-                    Download
+                   href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases/latest"
+                   target="_blank"
+                   rel="noopener">
+                    Download GRUB Theme Builder
                 </a>
 
                 <a class="btn btn-secondary"
-                   href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases">
-                    View Releases
+                   href="https://github.com/Erikenga2/GRUB-Theme-Builder"
+                   target="_blank"
+                   rel="noopener">
+                    View on GitHub
                 </a>
+
             </div>
 
         </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="intro" id="about">
+
+        <div class="container">
+
+            <div class="intro-box">
+
+                <h2>
+                    What is GRUB Theme Builder?
+                </h2>
+
+                <p>
+                    GRUB Theme Builder is a graphical
+                    <strong>GRUB 2 theme editor and builder</strong>
+                    designed to make GRUB theme creation easier.
+                </p>
+
+                <p>
+                    Instead of manually editing
+                    <code>theme.txt</code> files and calculating the
+                    position of every element, you can design supported
+                    GRUB theme elements visually on a canvas.
+                </p>
+
+                <p>
+                    Create a new GRUB theme from scratch or import an
+                    existing theme and customize it using a visual
+                    editing workflow.
+                </p>
+
+            </div>
+
+        </div>
+
     </section>
 
 
     <!-- SCREENSHOTS -->
 
     <section class="screenshots" id="screenshots">
+
         <div class="container">
 
             <div class="section-title">
-                <h2>See it in action</h2>
-                <p>Build your GRUB theme visually and see the result instantly.</p>
+
+                <h2>
+                    See it in action
+                </h2>
+
+                <p>
+                    Design and customize your GRUB theme visually.
+                </p>
+
             </div>
+
 
             <div class="image-grid">
 
                 <div class="image-box">
-                    <img src="Capture.PNG"
-                         alt="GRUB Theme Builder screenshot">
+
+                    <img
+                        src="Capture.PNG"
+                        alt="GRUB Theme Builder visual GRUB 2 theme editor"
+                        loading="lazy">
+
                     <div class="image-caption">
                         GRUB Theme Builder — Visual Editor
                     </div>
+
                 </div>
 
+
                 <div class="image-box">
-                    <img src="image.png"
-                         alt="GRUB Theme Builder preview">
+
+                    <img
+                        src="image.png"
+                        alt="GRUB Theme Builder GRUB theme preview"
+                        loading="lazy">
+
                     <div class="image-caption">
-                        Theme preview
+                        GRUB Theme Preview
                     </div>
+
                 </div>
 
             </div>
 
         </div>
+
     </section>
 
 
     <!-- FEATURES -->
 
     <section id="features">
+
         <div class="container">
 
             <div class="section-title">
-                <h2>Everything you need</h2>
-                <p>A complete visual workflow for building GRUB themes.</p>
+
+                <h2>
+                    Everything you need
+                </h2>
+
+                <p>
+                    A visual workflow for creating and customizing
+                    GRUB 2 themes.
+                </p>
+
             </div>
+
 
             <div class="features">
 
+
                 <div class="feature">
+
                     <div class="feature-icon">🎨</div>
-                    <h3>Visual Editor</h3>
+
+                    <h3>
+                        Visual Editor
+                    </h3>
+
                     <p>
-                        Design your GRUB interface visually instead of editing
-                        configuration files manually.
+                        Design your GRUB interface visually instead of
+                        manually editing every position in configuration files.
                     </p>
+
                 </div>
 
-                <div class="feature">
-                    <div class="feature-icon">↔️</div>
-                    <h3>Drag & Drop</h3>
-                    <p>
-                        Position elements exactly where you want them with
-                        intuitive mouse controls.
-                    </p>
-                </div>
 
                 <div class="feature">
+
+                    <div class="feature-icon">↔</div>
+
+                    <h3>
+                        Drag & Position
+                    </h3>
+
+                    <p>
+                        Position supported GRUB theme elements directly
+                        on the visual canvas.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
                     <div class="feature-icon">☰</div>
-                    <h3>Boot Menu</h3>
+
+                    <h3>
+                        Boot Menu Editor
+                    </h3>
+
                     <p>
-                        Create and customize GRUB boot menus with full control
-                        over their appearance.
+                        Create and customize GRUB boot menu elements
+                        through the graphical editor.
                     </p>
+
                 </div>
 
+
                 <div class="feature">
+
                     <div class="feature-icon">▰</div>
-                    <h3>Progress Bars</h3>
+
+                    <h3>
+                        Progress Bars
+                    </h3>
+
                     <p>
-                        Add customizable progress bars with borders,
-                        transparency and rounded corners.
+                        Add and customize progress bars with visual
+                        properties such as borders and transparency.
                     </p>
+
                 </div>
 
+
                 <div class="feature">
+
                     <div class="feature-icon">✦</div>
-                    <h3>Custom Styling</h3>
+
+                    <h3>
+                        Custom Styling
+                    </h3>
+
                     <p>
-                        Customize colors, borders, opacity, radius and other
-                        visual properties.
+                        Customize colors, transparency, borders,
+                        rounded corners and other supported properties.
                     </p>
+
                 </div>
 
+
                 <div class="feature">
+
                     <div class="feature-icon">↕</div>
-                    <h3>Import & Export</h3>
+
+                    <h3>
+                        Import & Export
+                    </h3>
+
                     <p>
-                        Import existing themes and export your finished GRUB
-                        theme when you're ready.
+                        Import existing GRUB themes and export your
+                        finished theme when your design is ready.
                     </p>
+
                 </div>
 
+
                 <div class="feature">
+
                     <div class="feature-icon">💾</div>
-                    <h3>Project Files</h3>
+
+                    <h3>
+                        Project Files
+                    </h3>
+
                     <p>
-                        Save your projects and continue working on them later.
+                        Save your projects and continue editing them
+                        later using the GRUB Theme Builder project format.
                     </p>
+
                 </div>
 
+
                 <div class="feature">
+
                     <div class="feature-icon">⌕</div>
-                    <h3>Zoom & Precision</h3>
+
+                    <h3>
+                        Canvas Zoom
+                    </h3>
+
                     <p>
-                        Work with precise positioning and zoom controls for
-                        detailed theme design.
+                        Zoom the design canvas to make detailed positioning
+                        and theme editing easier.
                     </p>
+
                 </div>
+
 
             </div>
 
         </div>
+
     </section>
 
 
     <!-- DOWNLOAD -->
 
     <section class="download" id="download">
+
         <div class="container">
 
             <div class="section-title">
-                <h2>Download GRUB Theme Builder</h2>
-                <p>Get the latest version from GitHub Releases.</p>
+
+                <h2>
+                    Download GRUB Theme Builder
+                </h2>
+
+                <p>
+                    Get the latest release and start creating your GRUB theme.
+                </p>
+
             </div>
+
 
             <div class="download-grid">
 
+
                 <div class="download-card">
-                    <h3>Windows</h3>
+
+                    <span class="platform">
+                        Windows
+                    </span>
+
+                    <h3>
+                        GRUB Theme Builder for Windows
+                    </h3>
+
                     <p>
-                        Download the Windows installer and start creating
-                        GRUB themes immediately.
+                        Download the Windows installer and create
+                        GRUB 2 themes using the visual editor.
                     </p>
 
                     <a class="btn btn-primary"
                        href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases/download/v1.0/Grub_theme_builder_Windows_setup.exe">
+
                         Download for Windows
+
                     </a>
+
                 </div>
 
 
                 <div class="download-card">
-                    <h3>Linux</h3>
+
+                    <span class="platform">
+                        Linux
+                    </span>
+
+                    <h3>
+                        GRUB Theme Builder for Linux
+                    </h3>
+
                     <p>
-                          Download the Linux(ps.Ubunut 26.04+) installer and start creating
-                        GRUB themes immediately.
+                        Linux package for compatible systems.
+                        Current package information is available
+                        on the GitHub Releases page.
                     </p>
 
                     <a class="btn btn-secondary"
                        href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases/download/v1.0/grubthemebuilder-1.0.0-linux-universal.deb">
+
                         Download for Linux
+
                     </a>
+
                 </div>
+
 
             </div>
 
         </div>
+
     </section>
 
 
     <!-- RELEASE -->
 
+    <section>
+
+        <div class="container">
+
+            <div class="release-box">
+
+                <div class="release-label">
+                    Current Release
+                </div>
+
+                <div class="version">
+                    v1.0.0
+                </div>
+
+                <p>
+                    Visit GitHub Releases for the latest downloads,
+                    release information and future versions.
+                </p>
+
+                <div class="buttons">
+
+                    <a class="btn btn-primary"
+                       href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases"
+                       target="_blank"
+                       rel="noopener">
+
+                        View Releases
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ROADMAP -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Roadmap
+                </h2>
+
+                <p>
+                    Planned improvements for future versions.
+                </p>
+
+            </div>
+
+
+            <div class="roadmap">
+
+
+                <div class="roadmap-item">
+
+                    <div class="roadmap-status">
+                        Planned
+                    </div>
+
+                    <p>
+                        Improved GRUB theme preview
+                    </p>
+
+                </div>
+
+
+                <div class="roadmap-item">
+
+                    <div class="roadmap-status">
+                        Planned
+                    </div>
+
+                    <p>
+                        More GRUB theme components
+                    </p>
+
+                </div>
+
+
+                <div class="roadmap-item">
+
+                    <div class="roadmap-status">
+                        Planned
+                    </div>
+
+                    <p>
+                        Better import compatibility
+                    </p>
+
+                </div>
+
+
+                <div class="roadmap-item">
+
+                    <div class="roadmap-status">
+                        Planned
+                    </div>
+
+                    <p>
+                        Improved export support
+                    </p>
+
+                </div>
+
+
+                <div class="roadmap-item">
+
+                    <div class="roadmap-status">
+                        Planned
+                    </div>
+
+                    <p>
+                        More advanced boot menu editing
+                    </p>
+
+                </div>
+
+
+                <div class="roadmap-item">
+
+                    <div class="roadmap-status">
+                        Planned
+                    </div>
+
+                    <p>
+                        Additional customization options
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LINKS -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    GRUB Theme Builder
+                </h2>
+
+                <p>
+                    Explore the project, download the latest version,
+                    or follow development on GitHub.
+                </p>
+
+            </div>
+
+
+            <div class="links">
+
+
+                <a class="link-card"
+                   href="https://github.com/Erikenga2/GRUB-Theme-Builder"
+                   target="_blank"
+                   rel="noopener">
+
+                    <strong>
+                        GitHub Repository
+                    </strong>
+
+                    <span>
+                        Source code, README, issues and project information.
+                    </span>
+
+                </a>
+
+
+                <a class="link-card"
+                   href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases"
+                   target="_blank"
+                   rel="noopener">
+
+                    <strong>
+                        Releases
+                    </strong>
+
+                    <span>
+                        Download GRUB Theme Builder and view release notes.
+                    </span>
+
+                </a>
+
+
+                <a class="link-card"
+                   href="https://github.com/Erikenga2"
+                   target="_blank"
+                   rel="noopener">
+
+                    <strong>
+                        Ermir Kenga
+                    </strong>
+
+                    <span>
+                        Developer and creator of GRUB Theme Builder.
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>
+                Build your GRUB theme visually.
+            </h2>
+
+            <p>
+                Create, customize and export GRUB 2 themes
+                without manually positioning every element.
+            </p>
+
+            <div class="buttons">
+
+                <a class="btn btn-primary"
+                   href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases/latest"
+                   target="_blank"
+                   rel="noopener">
+
+                    Download GRUB Theme Builder
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
 </main>
 
 
 <footer>
+
     <div class="container footer-content">
 
         <div>
@@ -637,10 +1519,16 @@
         </div>
 
         <div>
-            Created by Ermir Kenga
+            Created by
+            <a href="https://github.com/Erikenga2"
+               target="_blank"
+               rel="noopener">
+                Ermir Kenga
+            </a>
         </div>
 
     </div>
+
 </footer>
 
 </body>
