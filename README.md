@@ -1,56 +1,104 @@
 # GRUB Theme Builder
 
-A visual editor for creating, editing, previewing, and exporting **GRUB bootloader themes**.
+**GRUB Theme Builder** is a free visual **GRUB 2 theme editor and creator** for Windows and Linux.
 
-GRUB Theme Builder is designed to make GRUB theme creation easier without manually editing theme configuration files and positioning every element by hand.
+Create, edit, preview, import, and export GRUB bootloader themes using an easy-to-use graphical interface — without manually calculating element positions and editing GRUB theme configuration files by hand.
 
 ## ✨ Features
 
-- 🎨 Visual GRUB theme editor
+- 🎨 Visual GRUB 2 theme editor
 - 🖱️ Drag and position elements directly on the canvas
 - 📝 Text labels
 - 🖼️ Images
-- 📦 Boxes with customizable borders and rounded corners
+- 📦 Boxes with customizable borders
+- 🔲 Rounded corners and rounded borders
+- 🎨 Custom colors and transparency
 - 📊 Progress bars
 - 🔄 Circular progress indicators
 - 📋 GRUB boot menu editor
-- 🎨 Custom colors and transparency
-- 🔲 Rounded borders
 - 🔍 Canvas zoom
 - 💾 Save and open projects
 - 📥 Import existing GRUB themes
 - 📤 Export GRUB themes
 - 🔄 Automatic update checking
-- 🆕 Manual "Check for Updates" option
+- 🆕 Manual **Check for Updates** option
 
-## 🖥️ Interface
+## 🖥️ Visual GRUB Theme Editor
 
-The editor provides a visual canvas where GRUB theme elements can be placed and configured.
+GRUB Theme Builder provides a graphical canvas for designing GRUB themes.
 
-Instead of manually calculating positions in a GRUB theme configuration file, you can place elements visually and adjust their properties through the editor.
+Instead of manually editing a `theme.txt` file and calculating the position of every element, you can place and configure elements visually.
+
+You can add and customize:
+
+- Labels
+- Images
+- Boxes
+- Progress bars
+- Circular progress indicators
+- Boot menus
+- Other GRUB theme elements
+
+This makes GRUB theme creation easier for both beginners and experienced Linux users.
+
+## 🎯 What Can You Use It For?
+
+GRUB Theme Builder can be used to:
+
+- Create a GRUB 2 theme from scratch
+- Edit an existing GRUB theme
+- Design custom Linux bootloader screens
+- Change GRUB colors and transparency
+- Position GRUB elements visually
+- Create custom boot menus
+- Preview and adjust a theme before exporting it
+- Modify existing GRUB themes without manually editing every position
 
 ## 🚀 Getting Started
 
 ### Download
-Download for Windows and Linux 
-Go to the **Releases** section of this repository to download the latest version.
 
-You can find the latest release here:
+GRUB Theme Builder is available for **Windows and Linux**.
 
-https://github.com/Erikenga2/GRUB-Theme-Builder/releases
+Download the latest version from the GitHub Releases page:
+
+**[Download GRUB Theme Builder](https://github.com/Erikenga2/GRUB-Theme-Builder/releases)**
 
 ### Creating a Theme
 
 1. Open **GRUB Theme Builder**
 2. Create a new project
-3. Add images, labels, boxes, progress bars, or other elements
+3. Add images, labels, boxes, progress bars, boot menus, or other elements
 4. Position the elements on the canvas
 5. Configure their properties
-6. Preview your design
+6. Preview the design
 7. Save the project if you want to continue editing later
 8. Export the finished GRUB theme
 
-## 📂 Project Files
+## 📥 Import Existing GRUB Themes
+
+GRUB Theme Builder can import existing GRUB themes for editing.
+
+You can use the editor to:
+
+- Open an existing GRUB theme
+- Inspect its elements
+- Change colors
+- Change transparency
+- Modify properties
+- Rearrange elements
+- Customize the design
+- Export the modified theme
+
+This makes it possible to customize an existing GRUB theme without rebuilding it completely from scratch.
+
+## 📤 Export GRUB Themes
+
+When your design is finished, GRUB Theme Builder can export it as a GRUB theme.
+
+The exported theme files can then be installed and used with **GRUB 2** on compatible Linux systems.
+
+## 💾 Project Files
 
 GRUB Theme Builder uses its own project format for saving editable projects.
 
@@ -62,71 +110,59 @@ Project files use the:
 
 extension.
 
-This allows a theme to be saved and edited again later without rebuilding it from the beginning.
-
-## 📥 Import Existing GRUB Themes
-
-Existing GRUB themes can be imported into the editor.
-
-This allows you to:
-
-- Open an existing theme
-- Inspect its elements
-- Modify the design
-- Change colors and properties
-- Rearrange elements
-- Export the modified theme
-
-## 📤 Export
-
-When the design is finished, the project can be exported as a GRUB theme.
-
-The exported files can then be used with GRUB on a Linux system.
+This allows you to save a project and continue editing it later without rebuilding the theme from the beginning.
 
 ## 🔄 Update System
 
-GRUB Theme Builder includes an update checker that connects to the GitHub Releases API.
+GRUB Theme Builder includes an update checker that uses the **GitHub Releases API** to check whether a newer version is available.
+
+### Automatic Check
 
 The application can automatically check for a newer version when it starts.
 
-### Automatic check
+If a newer release is available, the application displays an update notification.
 
-If a newer version is available, the application displays an update notification.
+If no newer version is available, nothing is displayed.
 
-If there is no newer version, nothing is displayed.
+### Manual Check
 
-### Manual check
+The **Check for Updates** option allows you to manually check for a newer release.
 
-The **Check for Updates** option can be used to manually check for a newer version.
+If the application is already up to date, it informs you that no update is available.
 
-If no update is available, the application informs the user that the current version is up to date.
+## 🖥️ Supported Platforms
+
+- Windows
+- Linux
 
 ## 🛠️ Built With
 
 - Java
 - Java Swing
 - NetBeans
-- GitHub Releases
+- GitHub Releases API
 
 ## 📌 Current Version
 
 **v1.0.0**
 
-See the [Releases](https://github.com/Erikenga2/GRUB-Theme-Builder/releases) page for the latest version.
+For the latest release, downloads, and release notes, visit:
+
+**[GRUB Theme Builder Releases](https://github.com/Erikenga2/GRUB-Theme-Builder/releases)**
 
 ## 🗺️ Roadmap
 
-Future versions may include:
+Planned improvements may include:
 
-- [ ] Improved theme preview
+- [ ] Improved GRUB theme preview
 - [ ] More GRUB components
 - [ ] More customization options
 - [ ] Better import compatibility
 - [ ] Improved export support
-- [ ] Automatic application updates
 - [ ] More advanced boot menu editing
 - [ ] Additional visual effects
-- [ ] Improved UI
+- [ ] Improved user interface
+- [ ] Additional GRUB theme features
 
 ## 🤝 Contributing
 
@@ -153,6 +189,14 @@ License information will be added in a future release.
 
 Created by **Ermir Kenga**
 
+## ⭐ Support the Project
+
+If you find **GRUB Theme Builder** useful, consider giving the repository a **Star** on GitHub.
+
+Every star helps more people discover the project.
+
 ---
 
-⭐ If you find GRUB Theme Builder useful, consider giving the repository a **Star** on GitHub.
+### 🔎 Keywords
+
+`GRUB Theme Builder` · `GRUB Theme Editor` · `GRUB Theme Creator` · `GRUB Theme Maker` · `GRUB 2 Theme` · `GRUB GUI` · `GRUB Visual Editor` · `Linux GRUB Theme` · `GRUB Bootloader` · `GRUB Theme Designer`
