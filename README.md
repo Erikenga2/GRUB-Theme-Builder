@@ -6,6 +6,38 @@
 
 Instead of manually editing `theme.txt` and managing every resource separately, you can design your GRUB interface visually on a graphical canvas.
 
+
+## ⭐ Support the Project
+
+If you find GRUB Theme Builder useful, consider supporting the project.
+
+### 💖 Donate
+
+If you would like to support the development of GRUB Theme Builder, you can make a donation through PayPal.
+
+[![Donate](https://img.shields.io/badge/Donate-Support%20the%20Project-ff69b4)](https://paypal.me/ermirkenga141)
+
+Every contribution, even a small one, helps support development, testing, maintenance, and future updates.
+
+You can also support the project by:
+
+- ⭐ Giving the repository a Star on GitHub
+- 🐛 Reporting bugs
+- 💡 Suggesting new features
+- 🧪 Testing new releases
+- 📢 Sharing the project with other GRUB and Linux users
+
+---
+
+# 🎨 GRUB Theme Builder v1.1
+
+### Design. Customize. Export.
+
+**Visual GRUB 2 Theme Design Studio**
+
+[💖 Donate to Support the Project](https://paypal.me/ermirkenga141)
+
+
 ## ✨ Features
 
 ### 🎨 Visual Theme Editor
