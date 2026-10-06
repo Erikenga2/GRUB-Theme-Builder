@@ -179,6 +179,36 @@
             border-color: #4b5663;
         }
 
+        /* DONATE */
+
+        .nav-donate {
+            padding: 8px 14px;
+            border-radius: 8px;
+
+            background: #ff4f9a;
+            color: #ffffff !important;
+
+            font-weight: 700 !important;
+
+            box-shadow:
+                0 6px 22px rgba(255,79,154,0.16);
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .nav-donate:hover {
+            background: #ff70ad;
+            color: #ffffff !important;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 9px 28px rgba(255,79,154,0.24);
+        }
+
         /* HERO */
 
         .hero {
@@ -306,7 +336,8 @@
             transition:
                 transform 0.2s ease,
                 background 0.2s ease,
-                border-color 0.2s ease;
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
         .btn:hover {
@@ -334,6 +365,22 @@
         .btn-secondary:hover {
             background: #151a20;
             border-color: #4a5563;
+        }
+
+        .btn-donate {
+            background: #ff4f9a;
+            color: #ffffff;
+
+            box-shadow:
+                0 8px 30px rgba(255,79,154,0.18);
+        }
+
+        .btn-donate:hover {
+            background: #ff70ad;
+            color: #ffffff;
+
+            box-shadow:
+                0 10px 34px rgba(255,79,154,0.27);
         }
 
         /* INTRO */
@@ -857,6 +904,13 @@
 
             <a href="#download">Download</a>
 
+            <a class="nav-donate"
+               href="https://paypal.me/ermirkenga141"
+               target="_blank"
+               rel="noopener">
+                💖 Donate
+            </a>
+
             <a class="nav-github"
                href="https://github.com/Erikenga2/GRUB-Theme-Builder"
                target="_blank"
@@ -913,6 +967,13 @@
                    target="_blank"
                    rel="noopener">
                     View on GitHub
+                </a>
+
+                <a class="btn btn-donate"
+                   href="https://paypal.me/ermirkenga141"
+                   target="_blank"
+                   rel="noopener">
+                    💖 Donate
                 </a>
 
             </div>
@@ -1004,17 +1065,25 @@
                     <div class="image-caption">
                         GRUB Theme Builder — GRUB Preview
                     </div>
-     <div class="image-box">
+
+                </div>
+
+
+                <div class="image-box">
 
                     <img
-                        src="screenshots/shoot1.png"
+                        src="screenshots/shoot3.png"
                         alt="GRUB Theme Builder GRUB theme preview"
                         loading="lazy">
 
                     <div class="image-caption">
                         GRUB Theme Builder — GRUB Preview
                     </div>
-              <div class="image-box">
+
+                </div>
+
+
+                <div class="image-box">
 
                     <img
                         src="screenshots/shoot2.png"
@@ -1024,6 +1093,7 @@
                     <div class="image-caption">
                         GRUB Theme Builder — GRUB Preview
                     </div>
+
                 </div>
 
             </div>
@@ -1133,34 +1203,76 @@
     </section>
 
 
-
-    <!-- V1.1 STUDIOS -->
+    <!-- BACKGROUND STUDIO -->
 
     <section id="background-studio">
+
         <div class="container">
+
             <div class="section-title">
-                <h2>Background Studio</h2>
-                <p>Build the visual foundation of your GRUB theme directly inside the application.</p>
+
+                <h2>
+                    Background Studio
+                </h2>
+
+                <p>
+                    Build the visual foundation of your GRUB theme directly inside the application.
+                </p>
+
             </div>
 
             <div class="intro-box">
-                <h2>Three ways to create your background</h2>
-                <p><strong>Simple Color</strong> — use a single custom background color.</p>
-                <p><strong>Background Studio</strong> — create a graphical composition with gradients, shapes, waves, lines, arrows, decorations, custom colors and transparency.</p>
-                <p><strong>External Image</strong> — load an existing image and use it as the GRUB background.</p>
-                <p>Background Studio can combine multiple visual elements to create anything from simple gradients to more elaborate graphical compositions.</p>
+
+                <h2>
+                    Three ways to create your background
+                </h2>
+
+                <p>
+                    <strong>Simple Color</strong> — use a single custom background color.
+                </p>
+
+                <p>
+                    <strong>Background Studio</strong> — create a graphical composition with gradients,
+                    shapes, waves, lines, arrows, decorations, custom colors and transparency.
+                </p>
+
+                <p>
+                    <strong>External Image</strong> — load an existing image and use it as the GRUB background.
+                </p>
+
+                <p>
+                    Background Studio can combine multiple visual elements to create anything
+                    from simple gradients to more elaborate graphical compositions.
+                </p>
+
             </div>
+
         </div>
+
     </section>
 
+
+    <!-- BOOT MENU STUDIO -->
+
     <section id="boot-menu-studio">
+
         <div class="container">
+
             <div class="section-title">
-                <h2>Boot Menu Studio</h2>
-                <p>A dedicated visual studio for designing the GRUB boot menu.</p>
+
+                <h2>
+                    Boot Menu Studio
+                </h2>
+
+                <p>
+                    A dedicated visual studio for designing the GRUB boot menu.
+                </p>
+
             </div>
 
+
             <div class="features">
+
                 <div class="feature">
                     <div class="feature-icon">🌑</div>
                     <h3>Shadow</h3>
@@ -1208,26 +1320,70 @@
                     <h3>Complete Styling</h3>
                     <p>Combine colors, light, shadow, glass, borders and transparency into one menu design.</p>
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
+    <!-- V1.1 FEATURES -->
 
     <section id="v11-features">
+
         <div class="container">
+
             <div class="section-title">
-                <h2>What changed in v1.1?</h2>
-                <p>GRUB Theme Builder grows from a visual editor into a broader GRUB theme design studio.</p>
+
+                <h2>
+                    What changed in v1.1?
+                </h2>
+
+                <p>
+                    GRUB Theme Builder grows from a visual editor into a broader GRUB theme design studio.
+                </p>
+
             </div>
 
+
             <div class="intro-box">
-                <h2>Design the complete visual experience</h2>
-                <p>Version 1.1 introduces dedicated design environments for the <strong>background</strong> and <strong>boot menu</strong>, alongside integrated font management and expanded visual effects.</p>
-                <p>Fonts can be selected from TTF or OTF files and converted to the GRUB PF2 format automatically. Windows uses the bundled GRUB font tools, while Linux uses the system-installed <code>grub-mkfont</code> command.</p>
-                <p>Progress bars and circular progress indicators support custom colors, while images, labels, boxes, transparency, borders and other supported elements can be combined on the visual canvas.</p>
-                <p>The current export workflow is designed to preserve the visual design closely; current testing reports approximately <strong>90% visual fidelity</strong> between the canvas design and the exported GRUB theme, depending on the components used.</p>
+
+                <h2>
+                    Design the complete visual experience
+                </h2>
+
+                <p>
+                    Version 1.1 introduces dedicated design environments for the
+                    <strong>background</strong> and <strong>boot menu</strong>,
+                    alongside integrated font management and expanded visual effects.
+                </p>
+
+                <p>
+                    Fonts can be selected from TTF or OTF files and converted to the GRUB PF2
+                    format automatically. Windows uses the bundled GRUB font tools,
+                    while Linux uses the system-installed <code>grub-mkfont</code> command.
+                </p>
+
+                <p>
+                    Progress bars and circular progress indicators support custom colors,
+                    while images, labels, boxes, transparency, borders and other supported
+                    elements can be combined on the visual canvas.
+                </p>
+
+                <p>
+                    The current export workflow is designed to preserve the visual design closely;
+                    current testing reports approximately <strong>90% visual fidelity</strong>
+                    between the canvas design and the exported GRUB theme,
+                    depending on the components used.
+                </p>
+
             </div>
+
         </div>
+
     </section>
+
 
     <!-- DOWNLOAD -->
 
@@ -1250,7 +1406,6 @@
 
             <div class="download-grid">
 
-
                 <div class="download-card">
 
                     <span class="platform">
@@ -1262,11 +1417,14 @@
                     </h3>
 
                     <p>
-                        Create GRUB 2 themes with the full visual design workflow and bundled Windows font tools.
+                        Create GRUB 2 themes with the full visual design workflow
+                        and bundled Windows font tools.
                     </p>
 
                     <a class="btn btn-primary"
-                       href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases/download/1.1.0/GRUB2.Theme.Builder-1.1.0_win.exe" target="_blank" rel="noopener">
+                       href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases/download/1.1.0/GRUB2.Theme.Builder-1.1.0_win.exe"
+                       target="_blank"
+                       rel="noopener">
 
                         Download for Windows
 
@@ -1286,18 +1444,20 @@
                     </h3>
 
                     <p>
-                        Linux package for compatible systems. Font conversion uses the system-installed <code>grub-mkfont</code> command.
+                        Linux package for compatible systems. Font conversion uses
+                        the system-installed <code>grub-mkfont</code> command.
                     </p>
 
                     <a class="btn btn-secondary"
-                       href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases/download/1.1.0/grubthemebuilder-1.1.0-universal_linux.deb" target="_blank" rel="noopener">
+                       href="https://github.com/Erikenga2/GRUB-Theme-Builder/releases/download/1.1.0/grubthemebuilder-1.1.0-universal_linux.deb"
+                       target="_blank"
+                       rel="noopener">
 
                         Download for Linux
 
                     </a>
 
                 </div>
-
 
             </div>
 
@@ -1369,23 +1529,54 @@
             <div class="roadmap">
 
                 <div class="roadmap-item">
-                    <div class="roadmap-status">Planned</div>
-                    <p>Further improvements to GRUB theme preview and rendering.</p>
+
+                    <div class="roadmap-status">
+                        Planned
+                    </div>
+
+                    <p>
+                        Further improvements to GRUB theme preview and rendering.
+                    </p>
+
                 </div>
 
-                <div class="roadmap-item">
-                    <div class="roadmap-status">Planned</div>
-                    <p>Expanded support for additional GRUB theme components and properties.</p>
-                </div>
 
                 <div class="roadmap-item">
-                    <div class="roadmap-status">Planned</div>
-                    <p>Improved compatibility when importing more existing GRUB themes.</p>
+
+                    <div class="roadmap-status">
+                        Planned
+                    </div>
+
+                    <p>
+                        Expanded support for additional GRUB theme components and properties.
+                    </p>
+
                 </div>
 
+
                 <div class="roadmap-item">
-                    <div class="roadmap-status">Planned</div>
-                    <p>Additional visual tools and design controls.</p>
+
+                    <div class="roadmap-status">
+                        Planned
+                    </div>
+
+                    <p>
+                        Improved compatibility when importing more existing GRUB themes.
+                    </p>
+
+                </div>
+
+
+                <div class="roadmap-item">
+
+                    <div class="roadmap-status">
+                        Planned
+                    </div>
+
+                    <p>
+                        Additional visual tools and design controls.
+                    </p>
+
                 </div>
 
             </div>
@@ -1416,7 +1607,6 @@
 
 
             <div class="links">
-
 
                 <a class="link-card"
                    href="https://github.com/Erikenga2/GRUB-Theme-Builder"
@@ -1465,7 +1655,6 @@
 
                 </a>
 
-
             </div>
 
         </div>
@@ -1484,7 +1673,8 @@
             </h2>
 
             <p>
-                Create, customize and export GRUB 2 themes with dedicated studios for backgrounds and boot menus.
+                Create, customize and export GRUB 2 themes with dedicated
+                studios for backgrounds and boot menus.
             </p>
 
             <div class="buttons">
@@ -1498,6 +1688,15 @@
 
                 </a>
 
+                <a class="btn btn-donate"
+                   href="https://paypal.me/ermirkenga141"
+                   target="_blank"
+                   rel="noopener">
+
+                    💖 Support the Project
+
+                </a>
+
             </div>
 
         </div>
@@ -1506,6 +1705,8 @@
 
 </main>
 
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -1517,10 +1718,13 @@
 
         <div>
             Created by
+
             <a href="https://github.com/Erikenga2"
                target="_blank"
                rel="noopener">
+
                 Ermir Kenga
+
             </a>
         </div>
 
