@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://erikenga2.github.io/GRUB-Theme-Builder/sitemap.xml
